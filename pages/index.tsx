@@ -6,12 +6,18 @@ import download from "../public/Static/images/download.png";
 import chucky from "../public/Static/images/chucky2.png";
 import Header from "../components/Header/Header";
 import Link from "next/link";
-import {fetchJoke} from "./fetch";
+import { fetchJoke } from "./fetch";
 
 export default function Home(props: any) {
+  // state that controls the event of the button Hover and triggers the useEffect to run and do the Api call to fetch the data
   const [isShown, setIsShown] = useState(false);
+  //state that updates the currentJoke with the new one fetched from the server
   const [currentJoke, setCurrentJoke] = useState(Object);
 
+  // useEffect function is triggered from the change of the isShown state and when this happens
+  // an async function is called that it  runs the imported fetchJoke function
+  // to bring the newly fetched joke from the backend and it is stored inside currentJoke state so that it
+  //will be globally seen and useb by this component.
   useEffect(() => {
     const updateJoke = async () => {
       const joke = await fetchJoke();
@@ -29,6 +35,7 @@ export default function Home(props: any) {
       </Head>
 
       <main className={styles.main}>
+        {/* component made separately so that there is same header in all pages of the app! */}
         <Header></Header>
         <div className={styles.firstsection}>
           <h3 className={styles.title}>Welcome to Chuckiverse</h3>

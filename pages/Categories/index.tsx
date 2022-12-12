@@ -10,6 +10,8 @@ import { fetchCategoryJoke, getCategories } from "../fetch";
 export default function Categories(props: any) {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedJoke, setSelectedJoke] = useState<any>({});
+  const [categories, setDes] = useState<string>("");
+
 
   useEffect(() => {
     const currentJokeFunction = async () => {
@@ -18,6 +20,16 @@ export default function Categories(props: any) {
     };
     currentJokeFunction();
   }, [selectedCategory]);
+
+
+  // useEffect(() => {
+  //   const categories = async () => {
+  //     const Categories = await getCategories();
+  //     const Categories1 = await getCategories();
+  //     setDes(Categories1);
+  //   };
+  //   categories();
+  // }, []);
 
   return (
     <>
@@ -47,12 +59,18 @@ export default function Categories(props: any) {
         <h3 className={styles.title}>Categories</h3>
 
         <div className={styles.showCategoryDiv}>
-          <h4><span style={{marginRight:'10px;'}}>&#9733;</span>Selected Category: {selectedCategory} </h4>
-          <h4><span style={{marginRight:'10px;'}} >&#9733;</span>Selected Joke: {selectedJoke.value}</h4>
-          </div>
-       
+          <h4>
+            <span style={{ marginRight: "10px;" }}>&#9733;</span>Selected
+            Category: {selectedCategory}{" "}
+          </h4>
+          <h4>
+            <span style={{ marginRight: "10px;" }}>&#9733;</span>Selected Joke:{" "}
+            {selectedJoke.value}
+          </h4>
+        </div>
+
         <div className={styles.categoriesParentDiv}>
-          {props.categories.map((category: string, index: number) => {
+          {props.categories?.map((category: string, index: number) => {
             return (
               <div
                 onClick={() => setSelectedCategory(category)}

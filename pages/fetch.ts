@@ -23,12 +23,22 @@ export async function fetchCategoryJoke(category: string) {
   return categoryJoke;
 }
 
-export async function fetchCurrentWord(currentUserSearch : string){
+export async function fetchCurrentWord(currentUserSearch: string) {
   // Call the API and fetch data
   const baseUrl = "https://api.chucknorris.io/jokes/search?query=";
-  const currentWord = await fetch(`${baseUrl}${currentUserSearch}`);
-  // Convert to JSON
-  const modifiedCurrentWord = await currentWord.json();
-  // return the object
-  return modifiedCurrentWord;
-} 
+  //the variable inputWord has now a type of number cause it stores the number of the carachters that the
+  // currentUserSearch string has!!!
+  const inputWordLength = currentUserSearch.trim().length;
+  //this if prevends a console exception based on the amount of strings in the given user search word - permission of 
+  //at least 3 characters 
+  if (inputWordLength <= 3 && inputWordLength >= 120) {
+    return ;
+  }
+  if(inputWordLength >= 3 && inputWordLength <= 120){
+    const currentWord = await fetch(`${baseUrl}${currentUserSearch}`);
+    // Convert to JSON
+    const modifiedCurrentWord = await currentWord.json();
+    // return the object
+    return modifiedCurrentWord;
+  }
+}

@@ -27,7 +27,6 @@
   flex-grow: 1;
 }
 
-
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -43,6 +42,9 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .title,
@@ -140,14 +142,14 @@
   align-items: center;
 }
 
-.button{
+.button {
   margin: 0.3rem;
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
   border-radius: 4px;
   color: #3c4043;
   cursor: pointer;
-  font-family: arial,sans-serif;
+  font-family: arial, sans-serif;
   font-size: 14px;
   height: 36px;
   line-height: 27px;
@@ -162,7 +164,7 @@
 
 .button:hover {
   border-color: #dadce0;
-  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
   color: #202124;
 }
 
@@ -182,9 +184,9 @@
   background-color: #f8f9fa;
 }
 
-.hoverme{
-  border-left : transparent;
-  border-right : transparent;
+.hoverme {
+  border-left: transparent;
+  border-right: transparent;
   border-top: 2px solid #333;
   border-bottom: 2px solid #333;
   padding: 10px;
@@ -199,12 +201,12 @@
   background-color: #f8f9fa;
 }
 
-.lastdiv{
+.lastdiv {
   display: flex;
   justify-content: center;
 }
 
-.chuckImage{
+.chuckImage {
   width: 320px;
   height: 320px;
   margin-top: 2rem;
@@ -217,16 +219,17 @@
   border: 1px solid transparent;
   width: 70%;
   background: #f1f1f1;
+  border: 2px solid lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.searchpage .categoriespage{
+.searchpage .categoriespage {
   margin: 1rem;
 }
 
-.formdiv{
+.formdiv {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,20 +237,19 @@
   margin-top: 4rem;
 }
 
-.formdiv input{
+.formdiv input {
   width: 80%;
   height: 3rem;
   border: 2px solid transparent;
   padding: 1.2rem;
-
 }
 
-.formdiv button{
+.formdiv button {
   cursor: pointer;
-    height: 3rem;
-    width: 20%;
-    border: 2px solid transparent;
-    background-color: lightblue;
+  height: 3rem;
+  width: 20%;
+  border: 2px solid transparent;
+  background-color: lightblue;
 }
 
 .categoriesDiv {
@@ -261,7 +263,6 @@
   font-size: large;
 }
 
-
 .categoriesParentDiv {
   display: flex;
   justify-content: center;
@@ -269,21 +270,39 @@
   flex-wrap: wrap;
 }
 
-
-
-.showCategoryDiv{
+.showCategoryDiv {
   border: 3px solid lightblue;
   width: 50%;
- margin: auto;
- margin-top: 2rem;
- padding-left: 1rem;
- padding-right: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-
-
-.nojoke, .noWordGiven{
+.nojoke,
+.noWordGiven {
   margin-top: 2rem;
   border: 2px solid lightblue;
   padding: 1.5rem;
+}
+
+.searchUl{
+  border: 2px solid lightblue;
+  padding: 1.3rem;
+  margin: auto;
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.searchUlLi{
+  background-color: lightblue;
+    padding: 0.4rem;
+    margin: 1.2rem;
+    border-radius: 4px;
+    list-style: none;
+    border: 1px solid  #ff80d5;
+}
+
+.searchformbutton:hover {
+  font-size: 1rem;
 }
