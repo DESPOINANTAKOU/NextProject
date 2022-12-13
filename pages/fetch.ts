@@ -17,10 +17,14 @@ export async function fetchJoke() {
 
 export async function fetchCategoryJoke(category: string) {
   const baseUrl = "https://api.chucknorris.io/jokes/random?category=";
+  if(category !== ""){
   const categoryJokeResponse = await fetch(`${baseUrl}${category}`);
   const categoryJoke = await categoryJokeResponse.json();
   console.log(categoryJoke);
   return categoryJoke;
+  }else {
+    return;
+  };
 }
 
 export async function fetchCurrentWord(currentUserSearch: string) {

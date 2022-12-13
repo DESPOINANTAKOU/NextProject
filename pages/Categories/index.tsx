@@ -60,12 +60,12 @@ export default function Categories(props: any) {
 
         <div className={styles.showCategoryDiv}>
           <h4>
-            <span style={{ marginRight: "10px;" }}>&#9733;</span>Selected
+            <span style={{ marginRight: "10px" }}>&#9733;</span>Selected
             Category: {selectedCategory}{" "}
           </h4>
           <h4>
-            <span style={{ marginRight: "10px;" }}>&#9733;</span>Selected Joke:{" "}
-            {selectedJoke.value}
+            <span style={{ marginRight: "10px" }}>&#9733;</span>Selected Joke:{" "}
+            {selectedJoke?.value}
           </h4>
         </div>
 
